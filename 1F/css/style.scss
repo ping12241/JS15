@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Microsoft JhengHei;
+}
+
+%color {
+    color: #2EB738;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.wrapper {
+    width: 100%;
+    min-width: 1110px;
+}
+
+.content {
+    width: 1110px;
+    margin: 80px auto;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    width: 350px;
+    height: 366px;
+    margin-bottom: 40px;
+}
+
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.line {
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #2EB738;
+    font-weight: bold;
+    font-size: 20px;
+    
+    &::before { //&=父元素
+        content: 'x';
+        position: absolute;
+        top: -15px;
+        left: -8%;
+        @extend %color;
+    }
+
+    &::after {
+        content: 'x';
+        position: absolute;
+        top: -15px;
+        right: -8%;
+        @extend %color;
+    }
+}
+
+.title {
+    @extend %color;
+
+    h1 {
+        font-size: 58px;
+        line-height: 52px;
+    }
+}
+
+.formula {
+    background-color: white;
+    border-radius: 100px 0px 30px 0px;
+    box-shadow: 2px 2px 3px #cecece;
+    @extend %color;
+}
+
+.list {
+    list-style: none;
+    height: 100%;
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list__title {
+    font-size: 120px;
+    line-height: 120px;
+    font-weight: bold;
+    text-shadow: 4px 3px 0px #f0f0f0;
+}
+
+.list__item {
+    font-size: 22px;
+    line-height: 32px;
+}
