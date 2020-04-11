@@ -1,0 +1,120 @@
+@mixin flex ($direction: row, $align: flex-start, $justify: flex-start, $wrap: wrap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+%color {
+    color: white;
+}
+
+%fz-24 {
+    font-size: 24px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Microsoft JhengHei;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.wrapper {
+    width: 100vw;
+    min-width: 450px;
+    height: 100vh;
+    @include flex(row, center, center);
+}
+
+.content {
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px #3b3b3b;
+    background-color: #062145;
+}
+
+.text {
+    width: 350px;
+    height: 110px;
+    padding: 10px 20px;
+    overflow-x: auto;
+    border-radius: 20px 20px 0 0;
+    background-color: #041936;
+    @include flex(column, flex-end, space-around);
+}
+
+.text::-webkit-scrollbar {
+    display: none;
+}
+
+.operation {
+    font-size: 14px;
+    color: #00C4FF;
+}
+
+.text_num {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    color: white;
+}
+
+.keyboard {
+    width: 350px;
+    padding: 10px;
+    @include flex(row, center, space-around);
+}
+
+.box {
+    width: 75px;
+    height: 65px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .05s ease;
+    @include flex(row, center, center);
+    @extend %color;
+    @extend %fz-24;
+}
+
+.box_square {
+    width: 75px;
+    height: 65px;
+    border-radius: 15px;
+    background-color: #041936;
+}
+
+.box_click {
+    transform: scale(1);
+    border-radius: 15px;
+    background-color: #e7decf28;
+}
+
+.box:hover {
+    border-radius: 15px;
+    background-color: #e7decf28;
+}
+
+.box_result {
+    width: 160px;
+    height: 60px;
+    border-radius: 15px;
+    text-align: right;
+    padding-right: 30px;
+    cursor: pointer;
+    background: transparent linear-gradient(90deg, #00C4FF 0%, #6C00FF 100%);
+    @include flex(row, center, flex-end);
+    @extend %color;
+    @extend %fz-24;
+}
+
+.box_result:hover {
+    border-radius: 15px;
+    background: #e7decf28;
+}

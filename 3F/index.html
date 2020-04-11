@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="text">
+                <div class="operation" id="operation"></div>
+                <div class="text_num" id="text_num"></div>
+            </div>
+            <div class="keyboard">
+                <div class="box" data-key="103" onclick="key('7')">7</div>
+                <div class="box" data-key="104" onclick="key('8')">8</div>
+                <div class="box" data-key="105" onclick="key('9')">9</div>
+                <div class="box box_square" data-key="111" onclick="square('/')">÷</div>
+                <div class="box" data-key="100" onclick="key('4')">4</div>
+                <div class="box" data-key="101" onclick="key('5')">5</div>
+                <div class="box" data-key="102" onclick="key('6')">6</div>
+                <div class="box box_square" data-key="106" onclick="square('*')">×</div>
+                <div class="box" data-key="97" onclick="key('1')">1</div>
+                <div class="box" data-key="98" onclick="key('2')">2</div>
+                <div class="box" data-key="99" onclick="key('3')">3</div>
+                <div class="box box_square" data-key="107"  onclick="square('+')">+</div>
+                <div class="box" data-key="96" onclick="key('0')">0</div>
+                <div class="box" onclick="key('00')">00</div>
+                <div class="box" data-key="110" onclick="key('.')">.</div>
+                <div class="box box_square" data-key="109"  onclick="square('-')">-</div>
+                <div class="box" data-key="46" onclick="clean()">AC</div>
+                <div class="box" data-key="8" onclick="back()">⌫</div>
+                <div class="box_result" data-key="108" onclick="result()">=</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/js.js"></script>
+</body>
+</html>
