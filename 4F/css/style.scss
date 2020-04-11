@@ -1,0 +1,81 @@
+@mixin flex ($direction: row, $align: flex-start, $justify: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    min-width: 600px;
+    @include flex(row, center, center);
+}
+
+.content {
+    width: 550px;
+    height: 650px;
+}
+
+.title {
+    font-size: 66px;
+    line-height: 100px;
+    font-weight: 800;
+    border-top: 10px solid #000000;
+    border-bottom: 10px solid #000000;
+    margin-bottom: 30px;
+}
+
+.clock_list {
+    width: 100%;
+    height: 500px;
+}
+
+.clock_list_item {
+    width: 100%;
+    height: 100px;
+    padding: 16px 40px;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+    @include flex(row, center, space-between);
+
+    &:first-child, &:last-child {
+        background-color: #000000;
+        color: #ffffff;
+    }
+}
+
+.clock_list_left {
+    width: 60%;
+}
+
+.clock_list_right {
+    width: 40%;
+}
+
+.clock_list_area {
+    margin: 4px 0;
+    font-size: 36px;
+    font-weight: bolder;
+}
+  
+.clock_list_date {
+    font-style: italic;
+    font-weight: bolder;
+}
+  
+.clock_list_time {
+    font-size: 72px;
+    font-weight: bolder;
+}
